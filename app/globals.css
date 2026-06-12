@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #121414;
+  --foreground: #e3e2e2;
+  --dot-color: rgba(255, 255, 255, 0.03);
+  --card-bg: #1a1c1c;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent: #00f0ff;
+  --accent-glow: rgba(0, 240, 255, 0.4);
+  
+  --terminal-bg: #0d0e0f;
+  --terminal-header: #121414;
+  --terminal-footer: #0d0e0f;
+  --terminal-text: #00f0ff;
+  --terminal-input: #e3e2e2;
+  --terminal-prompt: #00dbe9;
+  --terminal-border: rgba(0, 240, 255, 0.15);
+  
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+html.light {
+  --background: #f7f9fb;
+  --foreground: #191c1e;
+  --dot-color: rgba(0, 0, 0, 0.04);
+  --card-bg: #ffffff;
+  --border-color: #e6e8ea;
+  --accent: #00677d;
+  --accent-glow: rgba(0, 103, 125, 0.2);
+  
+  --terminal-bg: #f1f5f9;
+  --terminal-header: #eceef0;
+  --terminal-footer: #eceef0;
+  --terminal-text: #334155;
+  --terminal-input: #191c1e;
+  --terminal-prompt: #00677d;
+  --terminal-border: rgba(0, 103, 125, 0.15);
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  
+  --color-cyan-glow: rgba(6, 182, 212, 0.4);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: center;
+  transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
+}
+
+/* Theme-responsive card & border utilities */
+.theme-card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+

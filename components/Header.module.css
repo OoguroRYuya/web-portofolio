@@ -1,0 +1,79 @@
+/* Underline pulse animation for active nav links */
+.activeUnderline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--accent);
+  border-radius: 9999px;
+  box-shadow: 0 0 8px var(--accent-glow);
+  animation: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+
+/* Theme Toggle Capsule Switch */
+.toggleCapsule {
+  width: 48px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.toggleCapsule:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.toggleThumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  position: absolute;
+  top: 3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 6px var(--accent-glow);
+}
+
+/* Left position for light mode, right for dark mode */
+.thumbLight {
+  left: 3px;
+}
+
+.thumbDark {
+  left: 27px;
+}
+
+/* Green dot for ZSH Prompt in Navbar */
+.greenDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 12px rgba(16, 185, 129, 1);
+  }
+}

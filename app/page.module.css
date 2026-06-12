@@ -1,0 +1,166 @@
+.terminalCard {
+  width: 100%;
+  max-width: 48rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  background-color: var(--terminal-bg);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: text;
+}
+
+:global(html.light) .terminalCard {
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
+}
+
+.terminalHeader {
+  background-color: var(--terminal-header);
+  padding: 0.875rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  user-select: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.terminalFooter {
+  background-color: var(--terminal-footer);
+  padding: 0.625rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--foreground);
+  opacity: 0.6;
+  user-select: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.terminalScreen {
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.625;
+  text-align: left;
+  height: 420px;
+  overflow-y: auto;
+  border: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.terminalScreen::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .terminalScreen {
+    padding: 2.5rem;
+  }
+}
+
+.welcomeTitle {
+  font-size: 1.875rem;
+  font-weight: 900;
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent-glow);
+  letter-spacing: 0.05em;
+  user-select: text;
+  transition: color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .welcomeTitle {
+    font-size: 3rem;
+  }
+}
+
+.welcomeSubtitle {
+  color: var(--foreground);
+  opacity: 0.8;
+  margin-top: 0.25rem;
+  user-select: text;
+  transition: color 0.3s ease;
+}
+
+.textInput {
+  color: var(--terminal-input);
+  font-family: var(--font-mono);
+}
+
+.textOutput {
+  padding-left: 1rem;
+  user-select: text;
+  white-space: pre-wrap;
+  color: var(--foreground);
+  opacity: 0.8;
+  transition: color 0.3s ease;
+}
+
+.textOutputLink {
+  color: var(--accent);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.statusLine {
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--foreground);
+  opacity: 0.8;
+  user-select: text;
+  transition: color 0.3s ease;
+}
+
+.statusDot {
+  color: var(--accent);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.commentLine {
+  color: var(--foreground);
+  opacity: 0.45;
+  padding-left: 1rem;
+  user-select: none;
+}
+
+.errorLine {
+  color: #f87171;
+  padding-left: 1rem;
+  user-select: text;
+}
+
+:global(html.light) .errorLine {
+  color: #dc2626;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: var(--accent);
+  animation: cursorBlink 1s step-end infinite;
+  vertical-align: middle;
+  box-shadow: 0 0 4px var(--accent-glow);
+  transition: background-color 0.3s ease;
+}
+
+@keyframes cursorBlink {
+  from, to { background-color: transparent; box-shadow: none; }
+  50% { background-color: var(--accent); box-shadow: 0 0 4px var(--accent-glow); }
+}
+
+.promptSymbol {
+  color: var(--accent);
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
