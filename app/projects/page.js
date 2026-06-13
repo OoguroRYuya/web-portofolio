@@ -6,17 +6,20 @@ import GithubActivity from "@/components/GithubActivity";
 
 export default function Projects() {
   const projectsList = [
-    // {
-    //   id: "PROJ_01",
-    //   title: "Warnet Medan Empire: 3-Tier Network Architecture",
-    //   category: "Network Security",
-    //   desc: "Designed and simulated a secure hierarchical 3-Tier topology in Cisco Packet Tracer. Features 5 LAN subnets, inter-VLAN trunking via HWIC-4ESW, NAT overload, stateless IPv6 address allocation, OSPF, and strict ACL-based SSH terminal protection. Laporan Akhir available.",
-    //   tags: ["Cisco Packet Tracer", "OSPF Routing", "IPv6 SLAAC", "SSH ACLs", "NAT Overload"],
-    //   icon: Shield,
-    //   isLarge: true,
-    //   image: "/network.png",
-    //   link: "/laporan-warnet.pdf",
-    // },
+    {
+      id: "PROJ_01",
+      title: "Warnet Medan Empire: 3-Tier Network Architecture",
+      category: "Network Security",
+      desc: "Designed and simulated a secure hierarchical 3-Tier topology in Cisco Packet Tracer. Features 5 LAN subnets, inter-VLAN trunking via HWIC-4ESW, NAT overload, stateless IPv6 address allocation, OSPF, and strict ACL-based SSH terminal protection. Laporan Akhir and PKT simulation files available below.",
+      tags: ["Cisco Packet Tracer", "OSPF Routing", "IPv6 SLAAC", "SSH ACLs", "NAT Overload"],
+      icon: Shield,
+      isLarge: true,
+      image: "/medan-empire.png",
+      link: "/laporan-warnet.pdf",
+      hasButtons: true,
+      pktLink: "/medan-empire.pkt",
+      pdfLink: "/laporan-warnet.pdf",
+    },
     {
       id: "PROJ_02",
       title: "RasaNusantara Recipe Discovery Platform",
@@ -118,16 +121,20 @@ export default function Projects() {
       isLarge: false,
       link: "https://github.com/OoguroRYuya/Kelompok-3-Ikeh-Furniture",
     },
-    // {
-    //   id: "PROJ_12",
-    //   title: "Coworking Space Network Infrastructure",
-    //   category: "Network Management",
-    //   desc: "Designed and simulated a high-availability infrastructure layout using Cisco Packet Tracer, optimizing dynamic bandwidth allocation and isolated tenant WiFi access zones.",
-    //   tags: ["Cisco Packet Tracer", "VLANs", "WLAN Security", "Bandwidth Management"],
-    //   icon: Shield,
-    //   isLarge: false,
-    //   link: "https://github.com/OoguroRYuya",
-    // },
+    {
+      id: "PROJ_12",
+      title: "Coworking Space Network Infrastructure",
+      category: "Network Management",
+      desc: "Designed and simulated a high-availability infrastructure layout using Cisco Packet Tracer, optimizing dynamic bandwidth allocation and isolated tenant WiFi access zones. Executive Summary and PKT simulation files available below.",
+      tags: ["Cisco Packet Tracer", "VLANs", "WLAN Security", "Bandwidth Management"],
+      icon: Shield,
+      isLarge: true,
+      image: "/coworking-space.png",
+      link: "/laporan-coworking.pdf",
+      hasButtons: true,
+      pktLink: "/coworking-space.pkt",
+      pdfLink: "/laporan-coworking.pdf",
+    },
     // {
     //   id: "PROJ_13",
     //   title: "Advanced Campus Network Implementation",
@@ -173,6 +180,15 @@ export default function Projects() {
             <FileText size={12} />
             <span>MEDAN_EMPIRE_REPORT.PDF</span>
           </a>
+          <a
+            href="/laporan-coworking.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-1.5 rounded-lg border border-cyan-500/30 bg-cyan-500/5 hover:bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 font-bold text-[10px] tracking-wider transition-all flex items-center gap-1.5"
+          >
+            <FileText size={12} />
+            <span>COWORKING_SPACE_REPORT.PDF</span>
+          </a>
         </div>
       </div>
 
@@ -180,6 +196,86 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto">
         {projectsList.map((project) => {
           const Icon = project.icon;
+
+          if (project.hasButtons) {
+            return (
+              <div
+                key={project.id}
+                className={`p-6 rounded-2xl theme-card border border-[var(--border-color)] hover:border-[var(--accent)]/50 hover:shadow-[0_10px_35px_var(--accent-glow)] transition-all duration-300 flex flex-col justify-between group overflow-hidden relative ${project.isLarge ? "md:col-span-2 md:row-span-1" : "col-span-1"
+                  }`}
+              >
+                {/* Soft background glow */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[var(--accent)]/0 rounded-full blur-3xl group-hover:bg-[var(--accent)]/5 transition-all pointer-events-none"></div>
+
+                <div className="space-y-4">
+                  {/* Card Top: ID & Category */}
+                  <div className="flex items-center justify-between text-[10px] text-slate-500">
+                    <div className="flex items-center gap-1.5 font-bold uppercase tracking-wider text-[var(--accent)]">
+                      <Icon size={12} />
+                      <span>{project.category}</span>
+                    </div>
+                    <span>{project.id}</span>
+                  </div>
+
+                  {/* Card Title */}
+                  <h3 className="text-sm md:text-base font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors flex items-center gap-1.5">
+                    <span>{project.title}</span>
+                  </h3>
+
+                  {/* Large Project Specific Section: Image Row */}
+                  {project.isLarge && project.image && (
+                    <div className="relative w-full h-40 rounded-xl overflow-hidden border border-[var(--border-color)] bg-black my-2">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                    </div>
+                  )}
+
+                  {/* Description */}
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl select-text">
+                    {project.desc}
+                  </p>
+
+                  {/* Custom Action Buttons */}
+                  <div className="flex flex-wrap gap-3 pt-2 select-none">
+                    <a
+                      href={project.pktLink}
+                      download
+                      className="px-3 py-1.5 rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/5 hover:bg-[var(--accent)]/15 text-[var(--accent)] font-bold text-[10px] tracking-wider transition-all flex items-center gap-1.5 cursor-pointer z-10"
+                    >
+                      <span>DOWNLOAD_PKT</span>
+                    </a>
+                    <a
+                      href={project.pdfLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/5 hover:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-bold text-[10px] tracking-wider transition-all flex items-center gap-1.5 cursor-pointer z-10"
+                    >
+                      <span>VIEW_REPORT_PDF</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 pt-4 mt-auto">
+                  {project.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="text-[9px] px-2 py-0.5 rounded bg-[var(--terminal-bg)] text-slate-500 border border-[var(--border-color)] group-hover:border-[var(--accent)]/30 transition-colors"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+          }
+
           return (
             <a
               key={project.id}
@@ -215,6 +311,7 @@ export default function Projects() {
                       src={project.image}
                       alt={project.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>

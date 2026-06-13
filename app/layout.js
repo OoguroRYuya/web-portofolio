@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "CyberFortress | Muhammad Hafizh Portfolio",
+  title: "Hafizh Portofolio",
   description: "Portfolio of Muhammad Hafizh - CyberSecurity & Network Engineer, System admin, and Security Enthusiast.",
 };
 
