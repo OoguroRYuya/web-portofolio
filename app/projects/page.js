@@ -153,12 +153,11 @@ export default function Projects() {
       {/* Page Title & Status */}
       <div className="space-y-1 text-center md:text-left select-none">
         <h1 className="text-2xl md:text-3xl font-black text-[var(--foreground)] tracking-wide uppercase flex items-center justify-center md:justify-start gap-2">
-          <span>PROJECTS_BENTO</span>
+          <span>PROJECTS</span>
           <span className="text-xs font-mono font-medium px-2 py-0.5 rounded bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
             SYSTEM_ACTIVE
           </span>
         </h1>
-        <p className="text-xs text-slate-500">&gt; mapping bento grids database manifest...</p>
 
         {/* Document Downloads Section */}
         <div className="flex flex-wrap gap-3 pt-4 justify-center md:justify-start">
@@ -171,7 +170,7 @@ export default function Projects() {
             <FileText size={12} />
             <span>DOWNLOAD_CV_RESUME.PDF</span>
           </a>
-          <a
+          {/* <a
             href="/laporan-warnet.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -188,7 +187,7 @@ export default function Projects() {
           >
             <FileText size={12} />
             <span>COWORKING_SPACE_REPORT.PDF</span>
-          </a>
+          </a> */}
         </div>
       </div>
 

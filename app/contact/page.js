@@ -96,7 +96,7 @@ export default function Contact() {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-6 md:px-12 py-12 space-y-10 text-[var(--foreground)] transition-colors duration-300">
-      
+
       {/* Title */}
       <div className="space-y-1 text-center md:text-left select-none">
         <h1 className="text-2xl md:text-3xl font-black text-[var(--foreground)] tracking-wide uppercase font-mono flex items-center justify-center md:justify-start gap-2">
@@ -105,23 +105,22 @@ export default function Contact() {
             PORT_443
           </span>
         </h1>
-        <p className="text-xs font-mono text-slate-500">&gt; opening encryption transmission port...</p>
+        <p className="text-xs font-mono text-slate-500">&gt; opening email transmission port...</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-5 gap-8 font-mono">
-        
+
         {/* Contact Form: 3 cols on desktop */}
         <div className="md:col-span-3 space-y-4">
           <form onSubmit={executeTransmission} className="space-y-4 p-5 md:p-6 rounded-lg theme-card border border-[var(--border-color)]">
-            
+
             {/* Status alerts */}
             {status.message && (
               <div
-                className={`p-3 rounded-lg text-xs flex items-center gap-2 border ${
-                  status.type === "success"
-                    ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400"
-                    : "bg-rose-500/10 border-rose-500/30 text-rose-600 dark:text-rose-400"
-                }`}
+                className={`p-3 rounded-lg text-xs flex items-center gap-2 border ${status.type === "success"
+                  ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400"
+                  : "bg-rose-500/10 border-rose-500/30 text-rose-600 dark:text-rose-400"
+                  }`}
               >
                 {status.type === "success" ? <CheckCircle2 size={14} /> : <ShieldAlert size={14} />}
                 <span>{status.message}</span>
@@ -174,7 +173,7 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col gap-1">
-              <label className="text-[10px] text-slate-500 uppercase select-none">Transmission Payload *</label>
+              <label className="text-[10px] text-slate-500 uppercase select-none">Message *</label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -182,7 +181,7 @@ export default function Contact() {
                 disabled={loading}
                 rows={4}
                 className="px-3 py-2 text-xs rounded bg-[var(--background)] border border-[var(--border-color)] focus:border-[var(--accent)]/30 focus:outline-none text-[var(--foreground)] resize-none transition-colors"
-                placeholder="Write your connection payload data..."
+                placeholder="Write your message..."
               />
             </div>
 
@@ -214,7 +213,7 @@ export default function Contact() {
             <h3 className="text-xs font-bold text-[var(--foreground)] uppercase tracking-widest select-none">
               // ALTERNATE_PORTALS
             </h3>
-            
+
             <div className="space-y-4 text-xs">
               {socialLinks.map((link, idx) => {
                 const Icon = link.icon;
