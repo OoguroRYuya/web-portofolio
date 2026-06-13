@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const [history, setHistory] = useState([
-    { type: "welcome", title: "WELCOME", subtitle: "> Cybersecurity Expert & System Architect" }
+    { type: "welcome", title: "WELCOME", subtitle: "" }
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isInteractive, setIsInteractive] = useState(false);
@@ -33,7 +33,7 @@ export default function Home() {
     },
     {
       cmd: "cat bio.txt",
-      output: { type: "output", text: "Cyber Security Engineer | System admin" }
+      output: { type: "output", text: "Cyber Security Engineer | Network Engineer | Backend Developer" }
     },
     {
       cmd: "ls ./links",
@@ -55,7 +55,7 @@ export default function Home() {
         "  skills      - tech stack",
         "  projects    - go to projects page",
         "  resume      - download/view CV/resume PDF",
-        "  laporan     - view Medan Empire Warnet report PDF",
+        // "  laporan     - view Medan Empire Warnet report PDF",
         "  posts       - show technical logs",
         "  profile     - go to profile page",
         "  contact     - get in touch",
@@ -67,7 +67,7 @@ export default function Home() {
       exec: () => [
         "Name: Muhammad Hafizh",
         "Location: Bandung, Indonesia",
-        "Bio: Cyber Security Engineer | System admin"
+        "Bio: Cyber Security Engineer | Network Engineer | Backend Developer"
       ]
     },
     skills: {
@@ -156,7 +156,7 @@ export default function Home() {
         charIdx++;
       } else {
         clearInterval(typingInterval);
-        
+
         // Push typed command and its output to history
         setTimeout(() => {
           setHistory((prev) => [
@@ -214,7 +214,7 @@ export default function Home() {
     } else if (trimmed === "cat location.txt") {
       setHistory([...updatedHistory, { type: "output", text: "Bandung, Indonesia" }]);
     } else if (trimmed === "cat bio.txt") {
-      setHistory([...updatedHistory, { type: "output", text: "Cyber Security Engineer | System admin" }]);
+      setHistory([...updatedHistory, { type: "output", text: "Cyber Security Engineer | Network Engineer | Backend Developer" }]);
     } else if (trimmed === "ls" || trimmed === "ls ./links") {
       setHistory([...updatedHistory, { type: "output", text: "github/  linkedin/  email/", isLinks: true }]);
     } else if (trimmed === "status --availability") {
@@ -246,24 +246,22 @@ export default function Home() {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-6 md:px-12 py-10 flex flex-col items-center justify-center min-h-[calc(100vh-10rem)]">
-      
+
       {/* INITIALIZING LOG */}
-      <div 
-        className={`text-center font-mono text-xs md:text-sm tracking-[0.2em] text-[var(--accent)] opacity-60 mb-6 transition-all duration-700 select-none ${
-          systemReadyLog ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none absolute"
-        }`}
+      <div
+        className={`text-center font-mono text-xs md:text-sm tracking-[0.2em] text-[var(--accent)] opacity-60 mb-6 transition-all duration-700 select-none ${systemReadyLog ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none absolute"
+          }`}
       >
         [SYSTEM_READY] INITIALIZING_PORTFOLIO
       </div>
 
       {/* Terminal Card Window */}
-      <div 
+      <div
         onClick={focusTerminal}
-        className={`${styles.terminalCard} ${
-          systemReadyLog ? "opacity-0 translate-y-8 pointer-events-none" : "opacity-100 translate-y-0"
-        }`}
+        className={`${styles.terminalCard} ${systemReadyLog ? "opacity-0 translate-y-8 pointer-events-none" : "opacity-100 translate-y-0"
+          }`}
       >
-        
+
         {/* Terminal Header */}
         <div className={styles.terminalHeader}>
           {/* macOS Control Dots */}
@@ -272,12 +270,12 @@ export default function Home() {
             <div className="w-3 h-3 rounded-full bg-[#ffbd2e]/90"></div>
             <div className="w-3 h-3 rounded-full bg-[#27c93f]/90"></div>
           </div>
-          
+
           {/* Terminal Title */}
           <div className="text-[11px] md:text-xs font-mono text-slate-500">
             portfolio – zsh – 80x24
           </div>
-          
+
           {/* Connection Indicator */}
           <div className="flex items-center gap-1.5 text-[10px] md:text-xs font-mono text-[var(--accent)] transition-colors duration-300">
             <span className="relative flex h-2 w-2">
@@ -290,7 +288,7 @@ export default function Home() {
 
         {/* Terminal Screen / Input-Output Body */}
         <div className={`scanlines ${styles.terminalScreen}`}>
-          
+
           {history.map((line, idx) => {
             if (line.type === "welcome") {
               return (
@@ -298,9 +296,11 @@ export default function Home() {
                   <h2 className={`${styles.welcomeTitle} select-text`}>
                     {line.title}
                   </h2>
-                  <p className={`${styles.welcomeSubtitle} select-text`}>
-                    {line.subtitle}
-                  </p>
+                  {line.subtitle && (
+                    <p className={`${styles.welcomeSubtitle} select-text`}>
+                      {line.subtitle}
+                    </p>
+                  )}
                 </div>
               );
             }
@@ -342,8 +342,8 @@ export default function Home() {
                 );
               }
               return (
-                <p 
-                  key={idx} 
+                <p
+                  key={idx}
                   className={styles.textOutput}
                 >
                   {line.text}
@@ -410,7 +410,7 @@ export default function Home() {
         <div className={styles.terminalFooter}>
           {/* Status */}
           <div>[SYSTEM_READY]</div>
-          
+
           {/* Footer Navigation Links */}
           <div className="flex items-center gap-4 md:gap-6">
             <Link href="/projects" className="hover:text-[var(--accent)] transition-colors cursor-pointer">

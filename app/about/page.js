@@ -38,7 +38,7 @@ export default function About() {
         </h2>
         <div className="p-5 md:p-7 rounded border border-[var(--border-color)] bg-[var(--card-bg)] text-xs md:text-sm leading-relaxed text-[var(--foreground)] transition-all duration-300">
           <p className="mb-4">
-            I am a Bachelor of Science in <span className="text-emerald-600 dark:text-emerald-400 font-bold">Informatics Engineering</span> student at <span className="text-emerald-600 dark:text-emerald-400 font-bold">Universitas Padjadjaran</span>. My interest lies heavily in <span className="text-emerald-600 dark:text-emerald-400 font-bold">CyberSecurity, Network Infrastructure</span>, and <span className="text-emerald-600 dark:text-emerald-400 font-bold">Backend Development</span>, driven by a deep curiosity about system hardening, networking protocols, and securing data flows.
+            I am an undergraduate student majoring in <span className="text-emerald-600 dark:text-emerald-400 font-bold">Informatics Engineering</span> at <span className="text-emerald-600 dark:text-emerald-400 font-bold">Universitas Padjadjaran</span>. My interest lies heavily in <span className="text-emerald-600 dark:text-emerald-400 font-bold">CyberSecurity, Network Infrastructure</span>, and <span className="text-emerald-600 dark:text-emerald-400 font-bold">Backend Development</span>, driven by a deep curiosity about system hardening, networking protocols, and securing data flows.
           </p>
           <p>
             With experience designing enterprise network architectures and implementing machine learning algorithms, I enjoy bridging the gap between infrastructure configuration and application security auditing.
@@ -58,7 +58,7 @@ export default function About() {
               <span>Universitas Padjadjaran</span>
               <span className="text-[10px] md:text-xs text-slate-500 font-normal">Sumedang, Indonesia | 2023 – Present</span>
             </div>
-            <p className="text-[11px] md:text-xs font-semibold">Bachelor of Science in Informatics Engineering</p>
+            <p className="text-[11px] md:text-xs font-semibold">Undergraduate Student — Pursuing a Bachelor of Science in Informatics Engineering</p>
             <p className="text-slate-500 dark:text-slate-400 text-[11px] md:text-xs pl-4 border-l border-emerald-500/30">
               • Academic Performance: Consistent "A" grades in core subjects: Computer Networks, Artificial Intelligence, Operating Systems, Database Systems II, and Logic Informatics.
             </p>
