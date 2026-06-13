@@ -273,7 +273,7 @@ export default function Home() {
 
           {/* Terminal Title */}
           <div className="text-[11px] md:text-xs font-mono text-slate-500">
-            portfolio – zsh – 80x24
+            portfolio – Muhammad Hafizh Fenaldi
           </div>
 
           {/* Connection Indicator */}
