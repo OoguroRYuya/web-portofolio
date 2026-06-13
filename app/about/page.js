@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <div className="w-full max-w-4xl mx-auto px-6 md:px-12 py-10 space-y-10 font-mono select-text text-[var(--foreground)] transition-colors duration-300">
-      
+
       {/* Top Profile Section */}
       <div className="flex flex-col items-center justify-center space-y-4">
         {/* Circular Avatar with glowing green ring */}
@@ -20,17 +20,17 @@ export default function About() {
             />
           </div>
         </div>
- 
+
         {/* Badges status */}
         <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-[10px] md:text-xs text-emerald-600 dark:text-emerald-400 font-semibold select-none">
-          <span>[ OK OPERATOR ]</span>
+          <span>[ ID: FZZYY ]</span>
           <span className="text-slate-400 dark:text-slate-700">|</span>
           <span>[ STATUS ACTIVE ]</span>
           <span className="text-slate-400 dark:text-slate-700">|</span>
-          <span>[ ROLE INFORMATICS_ENG ]</span>
+          <span>[ ROLE CS UNDERGRAD ]</span>
         </div>
       </div>
- 
+
       {/* 01. BIOGRAPHICAL SUMMARY */}
       <section className="space-y-3">
         <h2 className="text-xs md:text-sm font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase select-none">
@@ -52,7 +52,7 @@ export default function About() {
           02. EDUCATION_HISTORY
         </h2>
         <div className="p-5 md:p-7 rounded border border-[var(--border-color)] bg-[var(--card-bg)] text-xs md:text-sm leading-relaxed text-[var(--foreground)] space-y-6 transition-all duration-300">
-          
+
           <div className="space-y-2">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between font-bold text-emerald-600 dark:text-emerald-400">
               <span>Universitas Padjadjaran</span>
@@ -74,14 +74,14 @@ export default function About() {
 
         </div>
       </section>
- 
+
       {/* 03. TECHNICAL ARSENAL */}
       <section className="space-y-3">
         <h2 className="text-xs md:text-sm font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase select-none">
           03. TECHNICAL_ARSENAL
         </h2>
         <div className="p-5 md:p-6 rounded border border-[var(--border-color)] bg-[var(--card-bg)] grid grid-cols-1 md:grid-cols-3 gap-6 text-[11px] md:text-xs transition-all duration-300">
-          
+
           {/* Column 1: Core Skills */}
           <div className="space-y-3">
             <h3 className="text-emerald-600 dark:text-emerald-400 font-bold border-b border-[var(--border-color)] pb-1 uppercase tracking-wider select-none">
@@ -114,7 +114,7 @@ export default function About() {
               </li>
             </ul>
           </div>
- 
+
           {/* Column 2: Languages & Frameworks */}
           <div className="space-y-3">
             <h3 className="text-emerald-600 dark:text-emerald-400 font-bold border-b border-[var(--border-color)] pb-1 uppercase tracking-wider select-none">
@@ -147,7 +147,7 @@ export default function About() {
               </li>
             </ul>
           </div>
- 
+
           {/* Column 3: Tools & Platforms */}
           <div className="space-y-3">
             <h3 className="text-emerald-600 dark:text-emerald-400 font-bold border-b border-[var(--border-color)] pb-1 uppercase tracking-wider select-none">
@@ -180,17 +180,17 @@ export default function About() {
               </li>
             </ul>
           </div>
- 
+
         </div>
       </section>
- 
+
       {/* 04. CERTIFICATIONS & CREDENTIALS */}
       <section className="space-y-3">
         <h2 className="text-xs md:text-sm font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase select-none">
           04. CERTIFICATIONS_&amp;_BADGES
         </h2>
         <div className="p-5 md:p-7 rounded border border-[var(--border-color)] bg-[var(--card-bg)] text-xs leading-relaxed text-[var(--foreground)] space-y-6 transition-all duration-300">
-          
+
           <div className="space-y-1">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between text-emerald-600 dark:text-emerald-400 font-bold">
               <span>Cisco Networking Academy — Networking Basics</span>
@@ -200,7 +200,7 @@ export default function About() {
               Credential validation for core network parameters, IP routing, subnet masks, and dynamic routing architectures.
             </p>
           </div>
- 
+
           <div className="space-y-1 border-t border-[var(--border-color)] pt-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between text-emerald-600 dark:text-emerald-400 font-bold">
               <span>Cisco Networking Academy — Introduction to Cybersecurity</span>
@@ -210,7 +210,7 @@ export default function About() {
               Credential validation for threat classification, defense methodologies, cryptography, and server hardening concepts.
             </p>
           </div>
- 
+
           <div className="space-y-1 border-t border-[var(--border-color)] pt-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between text-emerald-600 dark:text-emerald-400 font-bold">
               <span>Samsung Innovation Campus (SIC) Batch 6 — AI Specialization</span>
@@ -220,7 +220,7 @@ export default function About() {
               Completion of Stage 3 Artificial Intelligence specialization, focusing on machine learning algorithms, NLP, and neural networks.
             </p>
           </div>
- 
+
         </div>
       </section>
 
@@ -230,7 +230,7 @@ export default function About() {
           05. LEADERSHIP_EXPERIENCES
         </h2>
         <div className="p-5 md:p-7 rounded border border-[var(--border-color)] bg-[var(--card-bg)] text-xs leading-relaxed text-[var(--foreground)] space-y-6 transition-all duration-300">
-          
+
           <div className="space-y-1">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between font-bold text-emerald-600 dark:text-emerald-400">
               <span>Chairman — Paguyuban Putra Putri MIPA Unpad</span>
@@ -263,7 +263,7 @@ export default function About() {
 
         </div>
       </section>
- 
+
     </div>
   );
 }
